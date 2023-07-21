@@ -82,11 +82,6 @@ lodgingSchema.pre(/^find/, function (next) {
   next();
 });
 
-lodgingSchema.post(/^find/, function (doc, next) {
-  console.log(`Query took ${Date.now() - this.start} ms`);
-  next();
-});
-
 const Lodging = mongoose.model('Lodging', lodgingSchema);
 
 module.exports = Lodging;

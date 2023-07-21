@@ -96,7 +96,7 @@ exports.createOne = (Model, modelName) => {
       req.body.imageCover = `${req.protocol}://${req.get(
         'host'
       )}/image/lodgings/${req.file.filename}`;
-      console.log(req.body.imageCover);
+      // console.log(req.body.imageCover);
     }
 
     try {
@@ -120,7 +120,7 @@ exports.updateOne = (Model, modelName) => {
       req.body.imageCover = `${req.protocol}://${req.get(
         'host'
       )}/image/lodgings/${req.file.filename}`;
-      console.log(req.body.imageCover);
+      // console.log(req.body.imageCover);
     }
 
     if (req.body.price < req.body.discount) {

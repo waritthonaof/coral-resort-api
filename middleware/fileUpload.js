@@ -10,22 +10,9 @@ const MIME_TYPE_MAP = {
   'image/jpeg': 'jpeg',
 };
 
-// const multerStorage = multer.diskStorage({
-//   destination: (req, file, cb) => {
-//     console.log('des', file);
-//     cb(null, `public/image/users`);
-//   },
-//   filename: (req, file, cb) => {
-//     const ext = MIME_TYPE_MAP[file.mimetype];
-//     cb(null, `${uuidv4()}${Date.now()}.${ext}`);
-//   },
-// });
-
 const multerStorage = multer.memoryStorage();
 
 const multerFilter = (req, file, cb) => {
-  console.log(file);
-  console.log(req.body);
   const isValid = !!MIME_TYPE_MAP[file.mimetype];
   let error = isValid
     ? null
